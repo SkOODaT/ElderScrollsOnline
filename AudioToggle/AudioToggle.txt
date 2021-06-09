@@ -1,0 +1,11 @@
+## Title: AudioToggle
+## Description: Toggles Sounds, Music, And NPC Chatter With Keybinding
+## APIVersion: 100035 100036
+## Version: 100035.1
+## Author: SkOODaT
+## SavedVariables: AudioToggle_SavedVariables
+## DependsOn: LibAddonMenu-2.0>=32
+
+AudioToggleMenu.lua
+AudioToggle.lua
+bindings.xml

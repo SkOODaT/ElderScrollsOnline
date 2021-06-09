@@ -1,0 +1,15 @@
+<Bindings>
+	<Layer name="General">
+		<Category name="AudioToggle">
+			<Action name="TOGGLE_MUSIC">
+				<Down>ToggleMusic()</Down>
+			</Action>
+			<Action name="TOGGLE_SOUND">
+				<Down>ToggleSound()</Down>
+			</Action>
+            <Action name="TOGGLE_DIALOGUE">
+				<Down>ToggleDialogue()</Down>
+			</Action>
+		</Category>
+	</Layer>
+</Bindings>

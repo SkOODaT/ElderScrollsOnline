@@ -1,0 +1,31 @@
+<GuiXml>
+    <Controls>
+        <TopLevelControl name="NameReticle1">
+            <Dimensions x="400" y="100"/>
+            <Anchor point="TOP" relativeTo="ZO_ReticleContainerReticle" offsetX="0" offsetY="-125" />    
+            <Controls>
+                <Label name="$(parent)Name" font="ZoFontGameSmall" text="" hidden="true" horizontalAlignment="CENTER" verticalAlignment="BOTTOM" wrapMode="ELLIPSIS">
+                    <AnchorFill />
+                </Label>
+            </Controls>
+        </TopLevelControl>
+        <TopLevelControl name="NameReticle2">
+            <Dimensions x="400" y="100"/>
+            <Anchor point="TOP" relativeTo="NameReticle1" offsetX="0" offsetY="-10" />    
+            <Controls>
+                <Label name="$(parent)Level" font="ZoFontGameSmall" text="" hidden="true" horizontalAlignment="CENTER" verticalAlignment="BOTTOM" wrapMode="ELLIPSIS">
+                    <AnchorFill />
+                </Label>
+            </Controls>
+        </TopLevelControl>
+        <TopLevelControl name="NameReticle3">
+            <Dimensions x="400" y="100"/>
+            <Anchor point="BOTTOM" relativeTo="NameReticle1" offsetX="0" offsetY="10" />    
+            <Controls>
+                <Label name="$(parent)Caption" font="ZoFontGameSmall" text="" hidden="true" horizontalAlignment="CENTER" verticalAlignment="BOTTOM" wrapMode="ELLIPSIS">
+                    <AnchorFill />
+                </Label>
+            </Controls>
+        </TopLevelControl>
+    </Controls>
+</GuiXml>

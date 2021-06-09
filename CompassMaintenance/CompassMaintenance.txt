@@ -1,0 +1,10 @@
+## Title: CompassMaintenance
+## Description: Simple Addon To Move and Size The Compass
+## APIVersion: 100035 100036
+## Version: 100035.1
+## Author: SkOODaT
+## SavedVariables: CompassMaintenance_SavedVariables
+## DependsOn: LibAddonMenu-2.0>=32
+
+CompassMaintenanceMenu.lua
+CompassMaintenance.lua

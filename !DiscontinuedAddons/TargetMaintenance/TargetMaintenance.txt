@@ -1,0 +1,28 @@
+## Title: TargetMaintenance
+## Description: More Information Added To The Target Unit Frame And A Reticle Unit Frame, Player info, Critters, Difficulity Stars, Better Level, Scale Fully Customizable
+## APIVersion: 100015
+## Version: 100015.1
+## Author: SkOODaT
+## SavedVariables: TargetMaintenance_SavedVariables
+
+libs\LibStub\LibStub.lua
+libs\LibAddonMenu-2.0\LibAddonMenu-2.0.lua
+libs\LibAddonMenu-2.0\controls\panel.lua
+libs\LibAddonMenu-2.0\controls\submenu.lua
+libs\LibAddonMenu-2.0\controls\button.lua
+libs\LibAddonMenu-2.0\controls\checkbox.lua
+libs\LibAddonMenu-2.0\controls\colorpicker.lua
+libs\LibAddonMenu-2.0\controls\custom.lua
+libs\LibAddonMenu-2.0\controls\description.lua
+libs\LibAddonMenu-2.0\controls\dropdown.lua
+libs\LibAddonMenu-2.0\controls\editbox.lua
+libs\LibAddonMenu-2.0\controls\header.lua
+libs\LibAddonMenu-2.0\controls\slider.lua
+libs\LibAddonMenu-2.0\controls\texture.lua
+
+TargetMaintenanceChecks.lua
+TargetMaintenanceScanner.lua
+TargetMaintenanceOnUpdate.lua
+TargetMaintenanceReticle.lua
+TargetMaintenanceMenu.lua
+TargetMaintenance.lua

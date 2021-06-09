@@ -1,0 +1,12 @@
+## Title: ChatMaintenance 
+## Description: Simple Addon To Do Several Chat Slash Commands.
+## APIVersion: 100035 100036
+## Version: 100035.1
+## Author: SkOODaT
+## SavedVariables: ChatMaintenance_SavedVariables
+## DependsOn: LibAddonMenu-2.0>=32
+
+ChatMaintenanceMenu.lua
+ChatMaintenanceCommands.lua
+ChatMaintenance.lua
+Bindings.xml

@@ -1,0 +1,10 @@
+﻿## Title: CapsLOCK
+## Description: Simple Addon To Show If CapsLOCK Is On With Red Text Above The Chat Frame. No More Yelling!
+## APIVersion: 100035 100036
+## Version: 100035.1
+## Author: SkOODaT
+## SavedVariables: CapsLOCK_SavedVariables
+## DependsOn: LibAddonMenu-2.0>=32
+
+CapsLOCKMenu.lua
+CapsLOCK.lua

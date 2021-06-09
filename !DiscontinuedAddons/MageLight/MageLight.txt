@@ -1,0 +1,12 @@
+## Title: MageLight
+## Description: Mage/Inner Light Warning In Chat\Alert Or PSBT W\Opional Sound, Hostile Targets
+## Author: SkOODaT
+## Version: 100004.1
+## APIVersion: 100004
+## SavedVariables: MageLightSavedVars
+
+libs\LibStub\LibStub.lua
+Libs\AceTimer-3.0\AceTimer-3.0.lua
+libs\LibAddonMenu-1.0\LibAddonMenu-1.0.lua
+
+MageLight.lua

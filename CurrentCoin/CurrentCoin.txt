@@ -1,0 +1,10 @@
+﻿## Title: CurrentCoin
+## Description: Simply Tells User How Much Cash Is In Bank
+## APIVersion: 100035 100036
+## Version: 100035.1
+## Author: SkOODaT
+## SavedVariables: CurrentCoin_SavedVariables
+## DependsOn: LibAddonMenu-2.0>=32
+
+CurrentCoinMenu.lua
+CurrentCoin.lua

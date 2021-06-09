@@ -1,0 +1,11 @@
+## Title: RL 
+## Description: Simple /rl To Reload UI, Kebinding Also, For Development...
+## APIVersion: 100004
+## Version: 100004.1
+## Author : SkOODaT
+
+libs\LibStub\LibStub.lua
+libs\LibAddonMenu-1.0\LibAddonMenu-1.0.lua
+
+RL.lua
+Bindings.xml

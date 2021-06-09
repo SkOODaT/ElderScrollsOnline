@@ -1,0 +1,27 @@
+## Title: CombatMaintenance
+## Description: Auto Weapon and Helmet, Shows Helm In Combat Hides Out... And Stow Weapon After Set Change
+## APIVersion: 100010
+## Version: 100010.1
+## Author: SkOODaT
+## SavedVariables: CombatMaintenance_SavedVariables
+
+libs\LibStub\LibStub.lua
+libs\LibAddonMenu-2.0\LibAddonMenu-2.0.lua
+libs\LibAddonMenu-2.0\controls\panel.lua
+libs\LibAddonMenu-2.0\controls\submenu.lua
+libs\LibAddonMenu-2.0\controls\button.lua
+libs\LibAddonMenu-2.0\controls\checkbox.lua
+libs\LibAddonMenu-2.0\controls\colorpicker.lua
+libs\LibAddonMenu-2.0\controls\custom.lua
+libs\LibAddonMenu-2.0\controls\description.lua
+libs\LibAddonMenu-2.0\controls\dropdown.lua
+libs\LibAddonMenu-2.0\controls\editbox.lua
+libs\LibAddonMenu-2.0\controls\header.lua
+libs\LibAddonMenu-2.0\controls\slider.lua
+libs\LibAddonMenu-2.0\controls\texture.lua
+
+CombatMaintenanceMenu.lua
+CombatMaintenance.lua
+Bindings.xml
+
+ShowWeaponsWhileMounted.lua

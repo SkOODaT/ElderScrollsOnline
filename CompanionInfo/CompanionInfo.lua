@@ -225,6 +225,8 @@ function CIFramesRapEvent(companionId, previousRapport, currentRapport)
     ChangedRapport = currentRapport - previousRapport
     if currentRapport > previousRapport then
         RAPOperator = "+"
+    else
+        RAPOperator = ""
     end
 end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------

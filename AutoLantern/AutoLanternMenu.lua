@@ -28,7 +28,7 @@ function ALLAM2Panel()
             getFunc = function() return ALSaved.Toggle end,
             setFunc = function(value) ALSaved.Toggle = value end,
         },
-        [2] =
+        [3] =
         {
             type = "checkbox",
             name = "Toggle Reticle Refresh On/Off.",

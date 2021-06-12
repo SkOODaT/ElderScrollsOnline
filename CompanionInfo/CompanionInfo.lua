@@ -292,7 +292,7 @@ end
 function CILock()
     if CISaved.Lock then
         CompanionInfoText:SetMovable(false)
-        CompanionInfoText:SetMouseEnabled(false)
+        CompanionInfoText:SetMouseEnabled(true)
     else
         CompanionInfoText:SetMovable(true)
         CompanionInfoText:SetMouseEnabled(true)

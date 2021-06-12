@@ -263,7 +263,17 @@ function CISavedVariables()
         MainCurrentRap = true,
         MainDescRap = true,
         TextColor = "FFFFFF",
+        CompassHide = false,
     }, GetWorldName())
+end
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function CompassHide()
+    -- Hide/Show Companion Pin On Compass
+    if CISaved.CompassHide == true then
+        COMPASS.container:SetAlphaDropoffBehavior(MAP_PIN_TYPE_ACTIVE_COMPANION, 0, 0, 0, 0)
+    else
+        COMPASS.container:SetAlphaDropoffBehavior(MAP_PIN_TYPE_ACTIVE_COMPANION, 1, 1, 1, 1)
+    end
 end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function CIUpdatePosition()

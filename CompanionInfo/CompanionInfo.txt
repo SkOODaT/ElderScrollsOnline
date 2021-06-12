@@ -1,7 +1,7 @@
 ﻿## Title: CompanionInfo
 ## Description: Simple Addon To Show Active Companion Info.
 ## APIVersion: 100035 100036
-## Version: 100035.17
+## Version: 100035.18
 ## Author: SkOODaT
 ## SavedVariables: CompanionInfo_SavedVariables
 ## DependsOn: LibAddonMenu-2.0>=32

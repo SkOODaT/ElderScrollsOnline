@@ -295,15 +295,15 @@ function CompanionInfoOnLoad(Event, AddonName)
     CISavedVariables()
     -- Setup Frames
     CIFramesSetup()
-    -- Show If Companion OnLoad
-    if HasActiveCompanion() then
-        CIFramesShow()
-        CIFramesUpdate()
-    end
     -- Make Settings Panel
     EVENT_MANAGER:RegisterForEvent(AddName.."_Player", EVENT_PLAYER_ACTIVATED,
     function()
-    CILAM2Panel()
+        CILAM2Panel()
+        -- Show If Companion OnLoad EVENT_PLAYER_ACTIVATED
+        if HasActiveCompanion() then
+            CIFramesShow()
+            CIFramesUpdate()
+        end
         EVENT_MANAGER:UnregisterForEvent(AddName.."_Player", EVENT_PLAYER_ACTIVATED)
     end)
     EVENT_MANAGER:UnregisterForEvent(AddName.."_OnLoad", EVENT_ADD_ON_LOADED)

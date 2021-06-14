@@ -65,19 +65,21 @@ end
 function AutoLanternOnLoad(Event, AddonName)
     if AddonName ~= AddName then return end
     ALSavedVariables()
-    local name, _, _, _, unlocked = GetCollectibleInfo(Memento) -- Almalexia's Enchanted Lantern
-    if (unlocked) then
-        ZO_CreateStringId("SI_BINDING_NAME_AENCHANTEDLANTERN", zo_strformat(SI_COLLECTIBLE_NAME_FORMATTER, name))
-    end
     EVENT_MANAGER:RegisterForEvent("AutoLantern_Player", EVENT_PLAYER_ACTIVATED,
     function()
-    ALLAM2Panel()
+        ALLAM2Panel()
+        local name, _, _, _, unlocked = GetCollectibleInfo(Memento) -- Almalexia's Enchanted Lantern
+        if (unlocked) then
+            ZO_CreateStringId("SI_BINDING_NAME_AENCHANTEDLANTERN", zo_strformat(SI_COLLECTIBLE_NAME_FORMATTER, name))
+        end
+        -- Load Events After Player Loaded
+        EVENT_MANAGER:RegisterForEvent("AutoLantern_Buff", EVENT_EFFECT_CHANGED, AutoLanternBuffEvent)
+        EVENT_MANAGER:RegisterForEvent("AutoLantern_Target", EVENT_RETICLE_TARGET_CHANGED, function() if ALSaved.Reticle then AutoLanternTargetEvent() end end)
+       -- Deregister Player Event No Longer Needed
         EVENT_MANAGER:UnregisterForEvent("AutoLantern_Player", EVENT_PLAYER_ACTIVATED)
     end)
     EVENT_MANAGER:UnregisterForEvent("AutoLantern_OnLoad", EVENT_ADD_ON_LOADED)
 end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 EVENT_MANAGER:RegisterForEvent("AutoLantern_OnLoad", EVENT_ADD_ON_LOADED, AutoLanternOnLoad)
-EVENT_MANAGER:RegisterForEvent("AutoLantern_Buff", EVENT_EFFECT_CHANGED, AutoLanternBuffEvent)
-EVENT_MANAGER:RegisterForEvent("AutoLantern_Target", EVENT_RETICLE_TARGET_CHANGED, function() if ALSaved.Reticle then AutoLanternTargetEvent() end end)
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------

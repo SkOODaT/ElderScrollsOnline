@@ -36,7 +36,7 @@ end
 function AutoLanternBuffEvent(eventcode, changeType, effectSlot, effectName, unitTag, beginTime, endTime, stackCount, iconName, buffType, effectType, abilityType, statusEffectType, unitName, unitId, abilityId, sourceType)
     if ALSaved.Toggle then
         if unitTag == "player" then
-            if not IsUnitInCombat("player") and not IsInteracting() and not IsMounted("player") then
+            if not IsUnitInCombat("player") and not IsUnitSwimming("player") and not IsInteracting() and not IsMounted("player") then
                 --if effectName == "Light of the Tribunal" and changeType == 1 then
                 --  d("Buff Active")
                 --else

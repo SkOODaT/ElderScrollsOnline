@@ -25,10 +25,10 @@ end
 function AutoLanternToggle()
     if ALSaved.Toggle then
         ALSaved.Toggle = false
-        d("Auto Lantern Off")
+        d("AutoLantern Off")
     else
         ALSaved.Toggle = true
-        d("Auto Lantern on")
+        d("AutoLantern On")
     end
     AutoLanternRunBuff()
 end

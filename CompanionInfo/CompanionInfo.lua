@@ -315,6 +315,25 @@ function CompanionInfoOnLoad(Event, AddonName)
             CIFramesShow()
             CIFramesUpdate()
         end
+        -- Warning Event 
+        EVENT_MANAGER:RegisterForEvent(AddName.."_Warning", EVENT_COMPANION_WARNING, CompanionWarning) -- Might Of Been Renamed To Below~
+        EVENT_MANAGER:RegisterForEvent(AddName.."_Warning", EVENT_COMPANION_SUMMON_RESULT, CompanionWarning)
+        -- Update Event 
+        EVENT_MANAGER:RegisterForEvent(AddName.."_Update", EVENT_COMPANION_EXPERIENCE_GAIN, function(eventId, ...) CIFramesXPEvent(...) CIFramesUpdate() end)
+        EVENT_MANAGER:RegisterForEvent(AddName.."_Update", EVENT_COMPANION_RAPPORT_UPDATE, function(eventId, ...) CIFramesRapEvent(...) CIFramesUpdate() end)
+        --EVENT_MANAGER:RegisterForEvent(AddName.."_Update", EVENT_ACTIVE_COMPANION_STATE_CHANGED, CIFramesUpdate)
+        EVENT_MANAGER:RegisterForEvent(AddName.."_Update", EVENT_OPEN_COMPANION_MENU, CIFramesUpdate)
+        EVENT_MANAGER:RegisterForEvent(AddName.."_Update", EVENT_RETICLE_TARGET_CHANGED, CIFramesUpdate)
+        -- Show Event
+        EVENT_MANAGER:RegisterForEvent(AddName.."_Show", EVENT_COMPANION_ACTIVATED, function() CIFramesShow() CIFramesUpdate() end)
+        EVENT_MANAGER:RegisterForEvent(AddName.."_Show", EVENT_CHATTER_END, function() CIFramesShow() CIFramesUpdate() end)
+        -- Hide/Show Event
+        EVENT_MANAGER:RegisterForEvent(AddName.."_Hide", EVENT_COMPANION_DEACTIVATED, function() CIFramesHide() end)
+        EVENT_MANAGER:RegisterForEvent(AddName.."_Hide", EVENT_CHATTER_BEGIN, function() CIFramesNoZeroHide() end)
+        -- Saved Vars Event
+        EVENT_MANAGER:RegisterForEvent(AddName.."_Vars", EVENT_GLOBAL_MOUSE_DOWN, function() CIUpdatePosition() end)
+        EVENT_MANAGER:RegisterForEvent(AddName.."_Vars", EVENT_GLOBAL_MOUSE_UP, function() CIUpdatePosition() end)
+        -- Deregister Player Event No Longer Needed
         EVENT_MANAGER:UnregisterForEvent(AddName.."_Player", EVENT_PLAYER_ACTIVATED)
     end)
     EVENT_MANAGER:UnregisterForEvent(AddName.."_OnLoad", EVENT_ADD_ON_LOADED)
@@ -335,24 +354,6 @@ COMPANION_STATE_INACTIVE
 COMPANION_STATE_PENDING   IsOwnerOfCurrentHouse()
 ]]--
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- Warning Event 
-EVENT_MANAGER:RegisterForEvent(AddName.."_Warning", EVENT_COMPANION_WARNING, CompanionWarning) -- Might Of Been Renamed To Below~
-EVENT_MANAGER:RegisterForEvent(AddName.."_Warning", EVENT_COMPANION_SUMMON_RESULT, CompanionWarning)
--- Update Event 
-EVENT_MANAGER:RegisterForEvent(AddName.."_Update", EVENT_COMPANION_EXPERIENCE_GAIN, function(eventId, ...) CIFramesXPEvent(...) CIFramesUpdate() end)
-EVENT_MANAGER:RegisterForEvent(AddName.."_Update", EVENT_COMPANION_RAPPORT_UPDATE, function(eventId, ...) CIFramesRapEvent(...) CIFramesUpdate() end)
---EVENT_MANAGER:RegisterForEvent(AddName.."_Update", EVENT_ACTIVE_COMPANION_STATE_CHANGED, CIFramesUpdate)
-EVENT_MANAGER:RegisterForEvent(AddName.."_Update", EVENT_OPEN_COMPANION_MENU, CIFramesUpdate)
-EVENT_MANAGER:RegisterForEvent(AddName.."_Update", EVENT_RETICLE_TARGET_CHANGED, CIFramesUpdate)
--- Show Event
-EVENT_MANAGER:RegisterForEvent(AddName.."_Show", EVENT_COMPANION_ACTIVATED, function() CIFramesShow() CIFramesUpdate() end)
-EVENT_MANAGER:RegisterForEvent(AddName.."_Show", EVENT_CHATTER_END, function() CIFramesShow() CIFramesUpdate() end)
--- Hide/Show Event
-EVENT_MANAGER:RegisterForEvent(AddName.."_Hide", EVENT_COMPANION_DEACTIVATED, function() CIFramesHide() end)
-EVENT_MANAGER:RegisterForEvent(AddName.."_Hide", EVENT_CHATTER_BEGIN, function() CIFramesHide() end)
--- Saved Vars Event
-EVENT_MANAGER:RegisterForEvent(AddName.."_Vars", EVENT_GLOBAL_MOUSE_DOWN, function() CIUpdatePosition() end)
-EVENT_MANAGER:RegisterForEvent(AddName.."_Vars", EVENT_GLOBAL_MOUSE_UP, function() CIUpdatePosition() end)
 -- LoadUp Event
 EVENT_MANAGER:RegisterForEvent(AddName.."_OnLoad", EVENT_ADD_ON_LOADED, CompanionInfoOnLoad)
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------

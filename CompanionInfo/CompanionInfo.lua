@@ -209,8 +209,12 @@ function CIFramesUpdate()
         else
             CompanionInfoIcon:SetHidden(false)
         end
+        local ExpierenceString = ""
+        if Level < 20 then
+            ExpierenceString = FrameExpierence..FramePercent..FrameGain
+        end
         FrameText = "|c"..CISaved.TextColor..FrameName..
-                    FrameLevel..FrameExpierence..FramePercent..FrameGain..
+                    FrameLevel..ExpierenceString..
                     FrameLevelRap..FramePrevRap..FrameChangedRap..FrameCurrentRap..FrameDescRap..
                     "|r"
     else

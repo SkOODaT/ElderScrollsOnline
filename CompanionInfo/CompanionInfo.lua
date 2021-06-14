@@ -101,10 +101,14 @@ function CIFramesOnMouseEnter()
     InitializeTooltip(InformationTooltip, CompanionInfoText, BOTTOM, 0, -5)
     -- Set Tooltip Info
     local TooltipText = ""
+    local ExpierenceString = ""
+    if Level < 20 then
+        ExpierenceString = " ("..XP.."/"..TotalXP..") "..XPPercent.."%".." [+"..GainedExperience.."]"
+    end
     if HasActiveCompanion() and not HasPendingCompanion() then
         Name, Icon, Level, XP, TotalXP, XPPercent, RapLevel, RapMin, RapValue, RapMax, RapLevelString, RapLevelDesc, PassiveAbility, PassiveAbilityDesc, Outfit = CICompantionInfo()
         TooltipText = "|c"..CISaved.TextColor..Name.." (Outfit "..Outfit..") |t16:16:"..Icon.."|t"..
-                      "\nLv:"..Level.." ("..XP.."/"..TotalXP..") "..XPPercent.."%".." [+"..GainedExperience.."]"..
+                      "\nLv:"..Level..ExpierenceString..
                       "\nRap:"..RapLevel.." ("..PrevRapport..") ("..RapMin.."/"..RapValue.."/"..RapMax..")".." ["..RAPOperator..ChangedRapport.."]"..
                       "\n|c00FEF1"..RapLevelString.."|r: |c"..CISaved.TextColor..RapLevelDesc..
                       "\n|c34FE00"..PassiveAbility.."|r: |c"..CISaved.TextColor..PassiveAbilityDesc..

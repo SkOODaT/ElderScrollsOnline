@@ -267,7 +267,7 @@ function CISavedVariables()
     }, GetWorldName())
 end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function CompassHide()
+function CICompassHide()
     -- Hide/Show Companion Pin On Compass
     if CISaved.CompassHide == true then
         COMPASS.container:SetAlphaDropoffBehavior(MAP_PIN_TYPE_ACTIVE_COMPANION, 0, 0, 0, 0)
@@ -303,6 +303,7 @@ function CompanionInfoOnLoad(Event, AddonName)
     if AddonName ~= AddName then return end
     -- Load Saved Vars
     CISavedVariables()
+    CICompassHide()
     -- Setup Frames
     CIFramesSetup()
     -- Make Settings Panel

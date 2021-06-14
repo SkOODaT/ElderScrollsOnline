@@ -47,7 +47,7 @@ function CILAM2Panel()
             name = "Companion Compass Hide On/Off",
             tooltip = "Hide Companion Icon On Compass.",
             getFunc = function() return CISaved.CompassHide end,
-            setFunc = function(value) CISaved.CompassHide = value CompassHide() end,
+            setFunc = function(value) CISaved.CompassHide = value CICompassHide() end,
         },
         [6] = 
         {

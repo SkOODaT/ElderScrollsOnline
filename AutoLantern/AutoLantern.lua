@@ -2,7 +2,9 @@ local AddName = "AutoLantern"
 local Memento = 341 -- Almalexia's Enchanted Lantern
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function AutoLanternTargetEvent()
-    AutoLanternRunBuff()
+    if ALSaved.Toggle then
+        AutoLanternRunBuff()
+    end
 end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function AutoLanternRunBuff()

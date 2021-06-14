@@ -78,7 +78,8 @@ function CICompantionInfo()
     local Icon = ZO_COMPANION_MANAGER:GetActiveCompanionIcon()
     local Level, XP = GetActiveCompanionLevelInfo()
     local TotalXP = GetNumExperiencePointsInCompanionLevel(Level + 1) or 0
-	local XPPercent = zo_floor(XP / TotalXP * 100)
+    local XPPercent = 0
+    if not (TotalXP == 0) then XPPercent = zo_floor(XP / TotalXP * 100) end
     local RapLevel = GetActiveCompanionRapportLevel()
     local RapMin = GetMinimumRapport() 
     local RapValue = GetActiveCompanionRapport()

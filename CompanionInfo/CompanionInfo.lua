@@ -251,7 +251,7 @@ function CompanionWarning(warningType, companionId)
 end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function CISavedVariables()
-    CISaved = ZO_SavedVars:NewAccountWide(AddName.."_SavedVariables", Version, nil, 
+    CISaved = ZO_SavedVars:NewAccountWide(AddName.."_SavedVariables", Version, GetWorldName(), 
     { 
         Toggle = true,
         X = -378,
@@ -273,7 +273,7 @@ function CISavedVariables()
         MainDescRap = true,
         TextColor = "FFFFFF",
         CompassHide = false,
-    }, GetWorldName())
+    })
 end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function CICompassHide()

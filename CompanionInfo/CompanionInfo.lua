@@ -21,7 +21,7 @@ function CIFramesSetup()
     if not CISaved.Toggle then return end
     -- Make Text
     CompanionInfoText:ClearAnchors()  
-    CompanionInfoText:SetDimensions(575,15)
+    CompanionInfoText:SetDimensions(600,15)
     CompanionInfoText:SetAnchor(CISaved.Point,GuiRoot,nil,CISaved.X,CISaved.Y)
     CompanionInfoText.Text = Window:CreateControl("CompanionInfoText", CompanionInfoText, CT_LABEL)
     CompanionInfoText.Text:SetAnchorFill(CompanionInfoText)

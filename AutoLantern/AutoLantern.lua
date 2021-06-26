@@ -6,6 +6,27 @@ function AutoLanternTargetEvent()
         AutoLanternRunBuff()
     end
 end
+
+function AutoLanternPlayerMoving()
+    -- Interacting
+    if IsInteracting() then
+        return true
+    -- Running
+    elseif IsShiftKeyDown() and IsPlayerMoving() then
+        return true
+    -- Swimming
+    elseif IsUnitSwimming("player") then
+        return true
+    -- Mounted
+    elseif IsMounted("player") then
+        return true
+    -- Combat
+    elseif IsUnitInCombat("player") then
+        return true
+    else
+        return false
+    end
+end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function AutoLanternRunBuff()
     local LANTERN_ACTIVE = false
@@ -19,7 +40,8 @@ function AutoLanternRunBuff()
             LANTERN_ACTIVE = false
         end
     end
-    if ALSaved.Toggle and not LANTERN_ACTIVE and not IsUnitInCombat("player") and not IsInteracting() and not IsMounted("player") then
+    item1, item2 = GetCollectibleCooldownAndDuration(Memento)
+    if ALSaved.Toggle and not LANTERN_ACTIVE and not AutoLanternPlayerMoving() and item1 <= 0 then
         UseCollectible(Memento)
     end
 end
@@ -38,7 +60,7 @@ end
 function AutoLanternBuffEvent(eventcode, changeType, effectSlot, effectName, unitTag, beginTime, endTime, stackCount, iconName, buffType, effectType, abilityType, statusEffectType, unitName, unitId, abilityId, sourceType)
     if ALSaved.Toggle then
         if unitTag == "player" then
-            if not IsUnitInCombat("player") and not IsUnitSwimming("player") and not IsInteracting() and not IsMounted("player") then
+            if not AutoLanternPlayerMoving() then
                 --if effectName == "Light of the Tribunal" and changeType == 1 then
                 --  d("Buff Active")
                 --else

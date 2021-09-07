@@ -13,7 +13,17 @@ function COMSavedVariables()                                                    
         Point = 9,
         RPoint = 9,
         Lock = true,
+        Alpha = 1,
     })
+end
+--
+function UpdateCompassTransparency(val)
+    local compass_center = WINDOW_MANAGER:GetControlByName("ZO_CompassFrame", "Center")
+    local compass_left = WINDOW_MANAGER:GetControlByName("ZO_CompassFrame", "Left")
+    local compass_right = WINDOW_MANAGER:GetControlByName("ZO_CompassFrame", "Right")
+    compass_center:SetAlpha(val)
+    compass_left:SetAlpha(val)
+    compass_right:SetAlpha(val)
 end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function COMFramesUpdate()
@@ -24,7 +34,9 @@ function COMFramesUpdate()
         ZO_CompassFrameLeft:SetDimensions(10,COMSaved.Height)
         ZO_CompassFrameRight:SetDimensions(10,COMSaved.Height)
         ZO_CompassFrame:SetDimensions(COMSaved.Width,COMSaved.Height)
-        
+
+        UpdateCompassTransparency(COMSaved.Alpha)
+
        -- ZO_CompassFrame:RefreshVisible() 
         --ZO_CompassFrame:SetHeight(height)
         --ZO_CompassFrameRight:SetHeight(height)
@@ -66,6 +78,9 @@ function COMDefaultCompass()                                                    
     ZO_CompassFrameLeft:SetDimensions(10,35)
     ZO_CompassFrameRight:SetDimensions(10,35)
     ZO_CompassFrame:SetDimensions(650,35)
+
+    UpdateCompassTransparency(COMSaved.Alpha)
+
 end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function COMUpdateVars()                                                                                                -- Screen Position Update Function For Save Vars
